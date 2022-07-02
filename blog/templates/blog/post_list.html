@@ -3,18 +3,15 @@
         <title>Hello first Django pord!</title>
     </head>
     <body>
-        <dive>
+        <div>
             <h1><a href="">First level heading!</a></h1>
-        </dive>
-        <dive>
-            <p>First post:</p>
-            <h2><a href="">This is my first Django project</a></h2>
-            <p>DATE: 02.07.2022 14:17</p>
-        </dive>
-        <dive>
-            <p>Second post:</p>
-            <h2><a href="">This is my first Django project!</a></h2>
-            <p>DATE: 02.07.2022 14:18</p>
-        </dive>
+        </div>
+        {% for post in posts %}
+        <div>
+            <p>published {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
